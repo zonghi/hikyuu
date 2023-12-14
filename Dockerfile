@@ -28,6 +28,10 @@ ENV LD_PRELOAD=/lib/x86_64-linux-gnu/libstdc++.so.6:$LD_PRELOAD
 
 # 安装中文字体
 COPY font.sh / 
-RUN cd .. && sh font.sh
+RUN cd / && sh font.sh
+
+# 配置密码
+COPY token.sh / 
+RUN cd / && sh token.sh
 
 
