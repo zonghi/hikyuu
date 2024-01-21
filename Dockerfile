@@ -5,7 +5,7 @@ MAINTAINER sion.lv "595652979@qq.com"
 SHELL ["/bin/bash", "-c"]
 RUN apt-get update
 RUN apt-get install -y libsqlite3-dev python3 python3-pip python3-dev curl unzip wget vim python3-pyqt5 git libmysqlclient-dev fonts-wqy-zenhei
-RUN pip3 install click jupyter pandas numpy flask matplotlib lxml h5py mkl bokeh pyecharts Flask-SQLAlchemy pytdx mysql-connector-python tables akshare GitPython
+RUN pip3 install click pandas numpy flask matplotlib lxml h5py mkl bokeh pyecharts Flask-SQLAlchemy pytdx mysql-connector-python tables akshare GitPython jupyterlab mplfinance
 #Ta-Lib 
 COPY build_talib.sh \
  ta-lib-0.4.0-src.tar.gz  /
@@ -33,5 +33,4 @@ RUN cd / && sh font.sh
 # 配置密码
 COPY token.sh / 
 RUN cd / && sh token.sh
-
 

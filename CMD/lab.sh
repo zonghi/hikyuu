@@ -9,7 +9,12 @@ docker run \
        --rm \
        -v $(pwd)/conf:/root/.hikyuu \
        -v $(pwd)/data:/root/data \
+       -v /home/sion/code/trade:/trade \
        -it hikyuu \
-       jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root
+       jupyter lab --notebook-dir=/trade \
+              --port=8888 \
+              --no-browser \
+              --ip=0.0.0.0 \
+              --allow-root
 
 # echo .............................. Bye
