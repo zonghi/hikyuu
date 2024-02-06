@@ -19,6 +19,7 @@ WORKDIR /hikyuu
 # #xmake安装
 RUN curl -fsSL https://xmake.io/shget.text | bash 
 
+RUN source ~/.xmake/profile && export XMAKE_ROOT=y && cd /hikyuu && xrepo env -y
 RUN source ~/.xmake/profile && export XMAKE_ROOT=y && cd /hikyuu && python3 setup.py install -j8
 
 #运行环境

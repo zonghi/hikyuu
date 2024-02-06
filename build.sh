@@ -13,7 +13,7 @@ sh cleanUnUsedDocker.sh
 set -e
 echo "building .............................. $buildName"
 #docker build --no-cache -t=$buildName .
-docker build -t=$buildName .
+docker build -t=$buildName --progress=plain .
 
 echo "build .............................. done"
 echo --------------------------------------------------
