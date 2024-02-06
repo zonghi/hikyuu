@@ -1,6 +1,7 @@
 #!/bin/bash
 
-mkdir -p $(pwd)/data
+# 执行env.sh脚本
+source $(dirname "$0")/env.sh
 
 # docker stop $(docker ps -a | grep hikyuu | awk '{print $1}')
 
@@ -11,7 +12,7 @@ docker run \
         --rm \
         -v $(pwd)/conf:/root/.hikyuu \
         -v $(pwd)/data:/root/data \
-        -v /home/sion/code/trade:/trade \
+        -v $trade_path:/trade \
         -d \
         -it hikyuu \
         python3 /trade/docker-alert.py
@@ -31,7 +32,7 @@ while true; do
           --rm \
           -v $(pwd)/conf:/root/.hikyuu \
           -v $(pwd)/data:/root/data \
-          -v /home/sion/code/trade:/trade \
+          -v $trade_path:/trade \
           -it hikyuu \
           python3 /trade/docker-server.py
 done

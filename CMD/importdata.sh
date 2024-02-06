@@ -1,6 +1,7 @@
 #!/bin/bash
 
-mkdir -p $(pwd)/data
+# 执行env.sh脚本
+source $(dirname "$0")/env.sh
 
 docker run \
        --name="hikyuu-import" \

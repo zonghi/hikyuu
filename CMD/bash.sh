@@ -1,15 +1,15 @@
 #!/bin/bash
-pt=8888
 
-mkdir -p $(pwd)/data
+# 执行env.sh脚本
+source $(dirname "$0")/env.sh
 
 docker run \
-       -p $pt:$pt \
+       -p $hky_pt:$hky_pt \
        --name="hikyuu" \
        --rm \
        -v $(pwd)/conf:/root/.hikyuu \
        -v $(pwd)/data:/root/data \
-       -v /home/sion/code/trade:/trade \
+       -v $trade_path:/trade \
        -it hikyuu \
        bash
 

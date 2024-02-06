@@ -15,12 +15,11 @@ RUN  cd / && sh build_talib.sh
 COPY  hikyuu /hikyuu/
 COPY src.patch /hikyuu/
 WORKDIR /hikyuu
-RUN cd /hikyuu && patch -p0 xmake.lua < src.patch
 
 # #xmake安装
 RUN curl -fsSL https://xmake.io/shget.text | bash 
 
-RUN source ~/.xmake/profile && export XMAKE_ROOT=y && python3 setup.py install -j8
+RUN source ~/.xmake/profile && export XMAKE_ROOT=y && cd /hikyuu && python3 setup.py install -j8
 
 #运行环境
 EXPOSE 8888
