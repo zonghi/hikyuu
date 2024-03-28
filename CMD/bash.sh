@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 执行env.sh脚本
-source $(dirname "$0")/env.sh
+#source $(dirname "$0")/env.sh
 
 docker run \
        -p $hky_pt:$hky_pt \

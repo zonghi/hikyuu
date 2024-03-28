@@ -1,9 +1,6 @@
 #!/bin/bash
 pt=8888
 
-# 执行env.sh脚本
-source $(dirname "$0")/env.sh
-
 docker run \
        -p $pt:$pt \
        --name="hikyuu-notebook" \
